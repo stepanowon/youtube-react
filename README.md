@@ -132,8 +132,8 @@ export default App;
   * setVolume(number) : number => 0~100
   * getVolume() 
   * setSize(width, height) : you can set player size on run-time
-
-## callbacks
+##
+#### callbacks
   * onEnded : when current video is ended
   * onPaused : when current video is pauded 
   * onPlayed : when video is played
