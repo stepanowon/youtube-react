@@ -1,5 +1,5 @@
 {
-  "name": "youtube-react",
+  "name": "youtube-player-react",
   "version": "0.1.0",
   "description": "youtube player from react ",
   "main": "dist/youtube-react.js",
