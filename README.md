@@ -19,7 +19,6 @@ yarn add youtube-player-react
 #### NPM Registry - usage
 ~~~
 import React, { Component } from 'react';
-//import YoutubeReact from './components/YoutubeReact'
 import YoutubeReact from 'youtube-player-react'
 
 class App extends Component {
