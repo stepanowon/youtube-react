@@ -8,6 +8,17 @@ This is based on https://developers.google.com/youtube/player_parameters?hl=en
 > Online Demo : http://sample.bmaster.kro.kr/youtube-react.html   
 > Online Demo Source Code : https://github.com/stepanowon/youtube-react/tree/master/examples/youtube-react-demo
 
+## Screen Shot
+#### by videoid 
+<img src="images/videoid.jpg" width="400" height="300" />
+
+#### by search keyword
+<img src="images/search.jpg" width="400" height="300" />
+
+#### by playlist
+<img src="images/playlist.jpg" width="400" height="300" />
+
+
 ## License
 MIT 
 ## Usage  
