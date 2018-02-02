@@ -5,7 +5,7 @@ This is based on https://developers.google.com/youtube/player_parameters?hl=en
 
 > Contact : stepanowon@hotmail.com   
 > Author : Stephen Won(원형섭), OpenSG Inc.  
-> Online Demo : http://sample.bmaster.kro.kr/youtube-react.html
+> Online Demo : http://sample.bmaster.kro.kr/youtube-react.html 
 > Online Demo Source Code : https://github.com/stepanowon/youtube-react/tree/master/examples/youtube-react-demo
 
 ## License
