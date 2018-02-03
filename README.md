@@ -13,10 +13,10 @@ This is based on https://developers.google.com/youtube/player_parameters?hl=en
 <img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/videoid.jpg" width="640" height="480" />
 
 #### by search keyword
-<img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/videoid.jpg" width="640" height="480" />
+<img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/search.jpg" width="640" height="480" />
 
 #### by playlist
-<img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/videoid.jpg" width="640" height="480" />
+<img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/playlist.jpg" width="640" height="480" />
 
 
 ## License
