@@ -3,8 +3,8 @@
 Youtube Player Component for React v16.
 This is based on https://developers.google.com/youtube/player_parameters?hl=en 
 
-[![npm](https://img.shields.io/npm/v/youtube-react.svg )](https://www.npmjs.com/package/youtube-react)
-[![npm](https://img.shields.io/npm/dm/youtube-react.svg)](https://www.npmjs.com/package/youtube-react)
+[![npm](https://img.shields.io/npm/v/youtube-player-react.svg )](https://www.npmjs.com/package/youtube-player-react)
+[![npm](https://img.shields.io/npm/dm/youtube-player-react.svg)](https://www.npmjs.com/package/youtube-player-react)
 [![GitHub stars](https://img.shields.io/github/stars/stepanowon/youtube-react.svg?style=social&label=Stars&style=for-the-badge)](https://github.com/stepanowon/youtube-react/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/stepanowon/youtube-react.svg?style=social&label=Fork&style=for-the-badge)](https://github.com/stepanowon/youtube-react/network)
 [![Build Status](https://travis-ci.org/stepanowon/youtube-react.svg?branch=master)](https://travis-ci.org/stepanowon/youtube-react)
