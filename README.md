@@ -12,7 +12,7 @@ This is based on https://developers.google.com/youtube/player_parameters?hl=en
 ---------------
 > Contact : stepanowon@hotmail.com   
 > Author : Stephen Won(원형섭), OpenSG Inc.  
-> Online Demo : http://sample.bmaster.kro.kr/youtube-react.html   
+> Online Demo : https://youtube-react-demo.vercel.app/  
 
 ## Screen Shot
 <img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/videoid.png" />
@@ -30,8 +30,7 @@ yarn add youtube-player-react
 #### NPM Registry - usage
 ~~~
 import React, { Component } from 'react';
-import YoutubeReact from './components/YoutubeReact'
-//import YoutubeReact from 'youtube-player-react'
+import YoutubeReact from 'youtube-player-react'
 
 class App extends Component {
   constructor() {
