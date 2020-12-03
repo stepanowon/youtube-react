@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      videoid:"PABUl_EX_hw", listType:"search", list:"", loop:0, autoplay:1
+      videoid:"PABUl_EX_hw", loop:0, autoplay:1
     }
     this.applyToPlayer = this.applyToPlayer.bind(this);
     this.onEnded = this.onEnded.bind(this);
@@ -17,14 +17,12 @@ class App extends Component {
 
   applyToPlayer() {
     let videoid = this.videoid.value;
-    let listType = this.listType.value;
-    let list = this.list.value;
-    let loop = this.loop.value;
+     let loop = this.loop.value;
     console.log(videoid)
     
     let currentState = this.state;
     this.setState({ 
-      videoid:videoid, listType:listType, list:list, loop: parseInt(loop,10), autoplay: currentState.autoplay 
+      videoid:videoid, loop: parseInt(loop,10), autoplay: currentState.autoplay 
     })
   }
 
@@ -49,8 +47,6 @@ class App extends Component {
       <div className="App">
         <div>
           video_id : <input type="text" ref={(videoid)=> { this.videoid = videoid }} defaultValue={this.state.videoid} /><br />
-          listType : <input type="text" ref={(listType)=> { this.listType = listType }} defaultValue={this.state.listType} /><br />
-          list : <input type="text"  ref={(list)=> { this.list = list }} defaultValue={this.state.list}/><br />
           loop : <input type="number"  ref={(loop)=> { this.loop = loop }} defaultValue={this.state.loop} /><br />
           <button onClick={()=> { this.applyToPlayer() }}>Apply</button>
           <button onClick={()=> { this.player.playVideo() }}>Play</button>

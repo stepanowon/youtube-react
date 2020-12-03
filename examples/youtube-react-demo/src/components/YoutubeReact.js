@@ -33,8 +33,6 @@ class YoutubeReact extends Component {
             width: this.props.width,
             videoId: this.props.videoid,
             playerVars : {
-                list: this.props.list,
-                listType: this.props.listType,
                 hl: this.props.hl,
                 loop: this.props.loop,
                 rel: this.props.rel,
@@ -126,9 +124,6 @@ YoutubeReact.propTypes = {
     hl: PropTypes.string,
     loop : oneOrZero,
     rel: oneOrZero,
-    listType : PropTypes.string,
-    list: PropTypes.string,
-    origin: PropTypes.string,
     onEnded: PropTypes.func,
     onPaused: PropTypes.func,
     onPlayed: PropTypes.func,
@@ -136,15 +131,12 @@ YoutubeReact.propTypes = {
 }
 
 YoutubeReact.defaultProps = {
-    width: 400, height:300, 
+    width: 320, height:240, 
     autoplay: 0, 
     videoid: 'PABUl_EX_hw',
     hl: 'en',
     loop: 0,
-    rel: 1,
-    listType: 'search',
-    list: '',
-    origin: 'http://localhost:8080'
+    rel: 1
 }
 
 export default YoutubeReact;
