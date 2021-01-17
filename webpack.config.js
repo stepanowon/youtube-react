@@ -5,9 +5,8 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname);
 
 const WebpackConfig = {
-
+    mode : "production",
     entry: APP_DIR + '/YoutubeReact.js',
-
     output: {
         path: BUILD_DIR,
         filename: 'youtube-react.js',
@@ -18,12 +17,14 @@ const WebpackConfig = {
     module: {
         rules: [
             {
-                loader: 'babel-loader',
-                test: /.js$/,
-                exclude: /node_modules/,
-                include : APP_DIR,
-                options: {
-                    presets: [ 'env', 'react' ]
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: ['@babel/plugin-proposal-object-rest-spread']
+                    }
                 }
             }
         ],
