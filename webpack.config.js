@@ -5,7 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname);
 
 const WebpackConfig = {
-    mode : "production",
+    mode : "development",
     entry: APP_DIR + '/YoutubeReact.js',
     output: {
         path: BUILD_DIR,
