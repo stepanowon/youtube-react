@@ -454,13 +454,14 @@ var YoutubeReact = function (_Component) {
                 playerVars: playerVars
             });
 
+            this.player.on('ready', this.props.onReady);
             this.player.on('stateChange', function (e) {
                 if (e.data === window.YT.PlayerState.ENDED) {
-                    if (_this2.player.onEnded) _this2.player.onEnded();
+                    if (_this2.props.onEnded) _this2.props.onEnded();
                 } else if (e.data === window.YT.PlayerState.PAUSED) {
-                    if (_this2.player.onPaused) _this2.player.onPaused();
+                    if (_this2.props.onPaused) _this2.props.onPaused();
                 } else if (e.data === window.YT.PlayerState.PLAYING) {
-                    if (_this2.player.onPlayed) _this2.player.onPlayed();
+                    if (_this2.props.onPlayed) _this2.props.onPlayed();
                 }
             });
         }
@@ -468,13 +469,53 @@ var YoutubeReact = function (_Component) {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
             this.player.loadVideoById(this.props.videoid);
-            //this.player.playVideo();
         }
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
-            this.player.destroy();
             this.player = null;
+        }
+    }, {
+        key: 'playVideo',
+        value: function playVideo() {
+            this.player.playVideo();
+        }
+    }, {
+        key: 'stopVideo',
+        value: function stopVideo() {
+            this.player.stopVideo();
+        }
+    }, {
+        key: 'pauseVideo',
+        value: function pauseVideo() {
+            this.player.pauseVideo();
+        }
+    }, {
+        key: 'mute',
+        value: function mute() {
+            this.player.mute();
+        }
+    }, {
+        key: 'unMute',
+        value: function unMute() {
+            this.player.unMute();
+        }
+    }, {
+        key: 'setVolume',
+        value: function setVolume(volume) {
+            if (volume >= 0 && volume <= 100) {
+                this.player.setVolume(volume);
+            }
+        }
+    }, {
+        key: 'getVolume',
+        value: function getVolume() {
+            return this.player.getVolume();
+        }
+    }, {
+        key: 'setSize',
+        value: function setSize(width, height) {
+            this.player.setSize(width, height);
         }
     }, {
         key: 'render',
