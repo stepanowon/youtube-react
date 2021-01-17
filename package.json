@@ -1,12 +1,12 @@
 {
   "name": "youtube-player-react",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "youtube player from react ",
   "main": "dist/youtube-react.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
-    "deploy" : "npm run build && npm publish --access public"
+    "deploy": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -34,8 +34,9 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom":"^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "youtube-player": "^5.5.2"
   }
 }

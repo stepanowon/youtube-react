@@ -1,7 +1,7 @@
 
 # youtube-player-react
-Youtube Player Component for React v16.
-This is based on https://developers.google.com/youtube/player_parameters?hl=en 
+Youtube-Player wrapper Component for React v17
+This is based on [youtube-player](https://github.com/gajus/youtube-player)
 
 [![npm](https://img.shields.io/npm/v/youtube-player-react.svg )](https://www.npmjs.com/package/youtube-player-react)
 [![npm](https://img.shields.io/npm/dm/youtube-player-react.svg)](https://www.npmjs.com/package/youtube-player-react)
@@ -12,7 +12,6 @@ This is based on https://developers.google.com/youtube/player_parameters?hl=en
 ---------------
 > Contact : stepanowon@hotmail.com   
 > Author : Stephen Won(원형섭), OpenSG Inc.  
-> Online Demo : https://youtube-react-demo.vercel.app/  
 
 ## Screen Shot
 <img src="https://raw.githubusercontent.com/stepanowon/youtube-react/master/images/videoid.png" />
@@ -29,68 +28,58 @@ yarn add youtube-player-react
 
 #### NPM Registry - usage
 ~~~
-import React, { Component } from 'react';
+import React, {useState, useRef} from 'react';
 import YoutubeReact from 'youtube-player-react'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      videoid:"PABUl_EX_hw", loop:0, autoplay:1
-    }
-    this.applyToPlayer = this.applyToPlayer.bind(this);
-    this.onEnded = this.onEnded.bind(this);
-    this.onPaused = this.onPaused.bind(this);
-    this.onPlayed = this.onPlayed.bind(this);
-    this.onReady = this.onReady.bind(this);
-  }
+const App = () => {
+  const [videoid,setVideoid] = useState("PABUl_EX_hw");
+  const [autoplay, setAutoplay] = useState(false);
+  const [params,setParams] = useState({ videoid:"PABUl_EX_hw", autoplay:0 });
+  const mytube = useRef(null);
 
-  applyToPlayer() {
-    let videoid = this.videoid.value;
-     let loop = this.loop.value;
-    console.log(videoid)
-    
-    let currentState = this.state;
-    this.setState({ 
-      videoid:videoid, loop: parseInt(loop,10), autoplay: currentState.autoplay 
-    })
-  }
-
-  onEnded() {
+  const onEnded = () => {
     console.log("### onEnd Callbacked")
   }
 
-  onPaused() {
+  const onPaused = () => {
     console.log("### onPaused Callbacked")
   }
 
-  onPlayed() {
+  const onPlayed = () => {
     console.log("### onPlayed Callbacked")
   }
 
-  onReady() {
+  const onReady = () => {
     console.log("### onReady callbacked")
   }
 
-  render() {
-    return (
-      <div className="App">
-        <div>
-          video_id : <input type="text" ref={(videoid)=> { this.videoid = videoid }} defaultValue={this.state.videoid} /><br />
-          loop : <input type="number"  ref={(loop)=> { this.loop = loop }} defaultValue={this.state.loop} /><br />
-          <button onClick={()=> { this.applyToPlayer() }}>Apply</button>
-          <button onClick={()=> { this.player.playVideo() }}>Play</button>
-          <button onClick={()=> { this.player.stopVideo() }}>Stop</button>
-          <button onClick={()=> { this.player.pauseVideo() }}>Pause</button>
-        </div>
-        <YoutubeReact ref={(player)=>{ this.player = player }} videoid={this.state.videoid} 
-          listType={this.state.listType} list={this.state.list} autoplay={this.state.autoplay}
-          onEnded={this.onEnded} onPaused={this.onPaused} 
-          onPlayed={this.onPlayed} onReady={this.onReady} />
-      </div>
-    );
+  const playCurrentVideo = () => {
+    mytube.current.player.playVideo();
   }
-}
+
+  const stopCurrentVideo = () => {
+    mytube.current.player.stopVideo();
+  }
+
+  const pauseCurrentVideo = () => {
+    mytube.current.player.pauseVideo();
+  }
+
+  const callbacks = { onEnded, onPaused, onPlayed, onReady }
+
+  return (
+    <div>
+      videoid: <input type="text" value={videoid} onChange={(e)=>setVideoid(e.target.value)} /><br />
+      autoplay: <input type="checkbox" checked={autoplay} onChange={(e)=>setAutoplay(e.target.checked)} /><br/>
+      <button onClick={()=>setParams({ videoid, autoplay:Number(autoplay) })}>Apply</button>
+      <button onClick={playCurrentVideo}>Play</button>
+      <button onClick={stopCurrentVideo}>Stop</button>
+      <button onClick={pauseCurrentVideo}>Pause</button>
+      <br />
+      <YoutubeReact ref={mytube} autoplay={params.autoplay} videoid={params.videoid} {...callbacks} />
+    </div>
+  );
+};
 
 export default App;
 ~~~
